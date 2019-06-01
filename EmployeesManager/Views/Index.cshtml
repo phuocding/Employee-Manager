@@ -1,0 +1,49 @@
+﻿@model IEnumerable<EmployeesManager.Models.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(x => x.EmployeeID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(x => x.EmployeeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(x => x.Department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(x => x.Salary)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var emp in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(x => emp.EmployeeID)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => emp.EmployeeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => emp.Department)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => emp.Salary)
+                </td>
+            </tr>
+        }
+</tbody>
+        </table>
+
